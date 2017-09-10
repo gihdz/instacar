@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import InstacarroLogo from './Instacarro_logo.png'
 import HowItWorksImg from './how-it-works-IC.png'
 import './App.css';
@@ -20,9 +19,13 @@ class App extends Component {
         price: 14000, name: "Volkswagen Golf", year: 2002,
         location: "Itaim Bibi. Sao Pablo.", votes: 8
       }
-    ]
+    ];
+    const brands = [
+      "Honda", "Toyota", "Nissan", "Kia", "Hyundai", "Bmw", 
+      "Mercedes Benz"
+    ];
     this.state = {
-      cars
+      cars, brands, txtBrands: ""
     }
   }
   componentDidMount(){
@@ -30,8 +33,22 @@ class App extends Component {
       this.mobileMenu.classList.toggle("show-mobile-menu");
     }, false)
   }
+  onBrandsTextChange(e){
+    this.setState({txtBrands: e.target.value});
+
+  }
+  setBrandsText(e){
+    this.setState({txtBrands:e.target.textContent })
+  }
   render() {
     const carsView = this.state.cars.map(c => <CarViewModel price={c.price} name={c.name} location={c.location} year={c.year} votes={c.votes} key={`${c.name}-${c.price}`}  /> );
+
+    const {txtBrands} = this.state;
+
+    const equallyToBrand = this.state.brands.indexOf(txtBrands) != -1;
+
+    const brands = this.state.brands.filter(b => b.toLowerCase().includes(txtBrands.toLowerCase())).map(b => <li key={b} onClick={this.setBrandsText.bind(this)} >{b}</li>);
+
     return (
       <div className="App">
         <header>
@@ -61,24 +78,32 @@ class App extends Component {
         <div className="intro">
           <div>
             <h1> Carro vendido.</h1>
-            Esqueca os classificados. seu carro e leiloado <br/>
+            Esqueca os classificados. seu carro e leiloado 
             em um instante. Nao e brincadeira e inovacao
-            </div>
+            
             <br/><br/>
-            <input className="search-models" type="text" placeholder="Qual e o modelo do carro que deseja vender?" /><input className="search-models-button" type="button" value="Vender Gratis" />
+            <input className="search-models" type="text" placeholder="Qual e o modelo do carro que deseja vender?" onChange={this.onBrandsTextChange.bind(this)} value={txtBrands} />
+            <input className="search-models-button" type="button" value="Vender Gratis" />
+            {txtBrands && equallyToBrand === false &&
+            <ul className="brands-autocomplete">
+              {brands}
+            </ul>
+            }
+            </div>
+            
         </div>
-        <div className="brands">
+        {/* <div className="brands">
 
-        </div>
+        </div> */}
         <div className="cars-list">
           <div className="popular-cars">
-            <h4>Carros populares vendidos perto de voce</h4>
+            <h2>Carros populares vendidos perto de voce</h2>
             <div className="list">
               {carsView}
             </div>
           </div>
           <div className="popular-models">
-          <h4>Modelos de carros mais vendidos</h4>
+          <h2>Modelos de carros mais vendidos</h2>
           <div className="list" >
             {carsView}
           </div>

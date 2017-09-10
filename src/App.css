@@ -1,27 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Handlee');
+body{
+  font-family: 'Handlee', cursive;
+}
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
 header{
   display: flex;
   background-color: #273c44;
@@ -55,6 +40,7 @@ div.btn-hamburguer div{
 
 .menu-list > li{
   display: inline;
+  cursor: pointer;
 }
 .menu-list > li > a {
   display: inline-block;
@@ -91,17 +77,26 @@ div.btn-hamburguer div{
   padding: 14px 16px;
   text-decoration: none;
 }
+.show-mobile-menu{
+  display: block;
+}
+
 
 .intro{
  background-color: #273c44;
  text-align: center;
  color: white; 
  height: 100%;
- padding-bottom: 30px;
+ padding-bottom: 50px;
  padding-top: 100px;
  width: 100%;
 }
-.intro > input.search-models{
+.intro > div{
+  max-width: 450px;
+  margin: 0 auto;
+  width: 100%;
+ }
+.intro> div > input.search-models{
   border-radius: 5px 0 0 5px;
   border-color: transparent;
   max-width: 350px;
@@ -109,7 +104,7 @@ div.btn-hamburguer div{
   height: 30px;
   font-size:12px;
 }
-.intro > input.search-models-button{
+.intro > div > input.search-models-button{
   height: 36px;  
   border-radius: 0 5px 5px 0;
   border-color: transparent;
@@ -214,6 +209,26 @@ footer{
   background-color: aliceblue;
 }
 
+ul.brands-autocomplete{
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+  color:black;
+  border: 1px black solid;
+  width: 100%;
+  margin: 0 auto;
+}
+ul.brands-autocomplete li{
+  padding: 2px 0;
+  text-align: left;
+
+}
+ul.brands-autocomplete li:hover{
+  background-color: beige;
+
+}
+
 @media screen and (max-width: 370px){
   .cars-list div > div.list{
     justify-content: center;
@@ -229,19 +244,24 @@ footer{
     text-align: left;
   }
 }
-@media screen and (max-width: 464px){
-  .intro > input.search-models-button{
+@media screen and (max-width: 465px){
+  .intro > div{
+    width: 350px;
+  }
+  .intro > div > input.search-models-button{
     border-radius: 5px;
+    display: none;
   }
   
-  .intro > input.search-models{
+  .intro > div > input.search-models{
     border-radius: 5px ;
   }  
 }
 @media screen and (max-width: 380px){
-  .intro > input.search-models{
+  .intro > div{
     width: 280px;
   }  
+  
 }
 @media screen and (max-width: 453px){
   .header-right > div.btn-hamburguer{
@@ -255,7 +275,4 @@ footer{
   .mobile-menu{
     display: none !important;
   }
-}
-.show-mobile-menu{
-  display: block;
 }
