@@ -26,11 +26,25 @@ header{
   display: flex;
   background-color: #273c44;
   justify-content: space-between;
+  padding-bottom: 10px;
 }
-.header-left{
+.header-left > img{
+  width: 150px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+.header-right > div.btn-hamburguer{
+  display:none;
+  cursor: pointer;
+  margin-top: 30px;
+  margin-right: 20px;
   
 }
-.header-right{
+div.btn-hamburguer div{
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
 }
 .menu-list{
   list-style-type: none;
@@ -38,6 +52,7 @@ header{
   padding: 0;
   overflow: hidden;
 }
+
 .menu-list > li{
   display: inline;
 }
@@ -48,15 +63,52 @@ header{
   padding: 14px 16px;
   text-decoration: none;
 }
+.mobile-menu{
+ background-color: #273c44;
+ width: 100%;
+ position: absolute;
+ display: none;
+}
+.mobile-menu > ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.mobile-menu > ul > li{
+  padding: 8px 0;
+  text-align: left;  
+  cursor: pointer;
+  
+}
+.mobile-menu > ul > li:hover{
+  background-color: black;
+  
+}
+.mobile-menu > ul > li > a {
+  color:white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 
 .intro{
  background-color: #273c44;
  text-align: center;
  color: white; 
- height: 250px;
+ height: 100%;
+ padding-bottom: 30px;
  padding-top: 100px;
+ width: 100%;
 }
-
+.intro > input.search-models{
+  border-radius: 5px 0 0 5px;
+  border-color: transparent;
+  max-width: 350px;
+  width: 100%;
+  height: 30px;
+  font-size:12px;
+}
 .intro > input.search-models-button{
   height: 36px;  
   border-radius: 0 5px 5px 0;
@@ -67,47 +119,36 @@ header{
   font-weight: 600;
 }
 
-.intro > input.search-models{
-  border-radius: 5px 0 0 5px;
-  border-color: transparent;
-  
-  width: 350px;
-  height: 30px;
-  font-size:12px;
-}
+
 .brands{
   height: 80px;
   width: 100%;
   background-color: aliceblue;
 }
 .cars-list{
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
   height: 100%;
   margin: 0 auto;
 }
-.cars-list > .popular-cars{
+.cars-list div{
   text-align: left;
+  
 }
-.cars-list > .popular-models{
-  text-align: left;
+.cars-list div > div.list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 .car-info{
   width: 170px;
   font-size: 10px;
+  margin: 0 5px;
 }
 .car-info > img {
   max-width: 170px;
 }
-.popular-cars > div.list{
-  display: flex;
-  justify-content: space-between;
 
-}
-.popular-models > div.list{
-  display: flex;
-  justify-content: space-between;
-  
-}
 .how-it-works{
   margin-top: 50px;
   padding-top:10px;
@@ -119,14 +160,22 @@ header{
   background: linear-gradient(to right, #004A46, #43B86A); /*Standard*/
 
 }
+.how-it-works div.container > div.image {
+  width: 300px;
+  margin: 0 20px;  
+  }
 .how-it-works div.container > div.image > img{
-  width: 300px;  
+  width:100%;
+  max-width: 300px;
   }
 .how-it-works > div.container{
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  
+  justify-content: space-around;
   margin: 0 auto;
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
   
 }
 .how-it-works > h2.heading{
@@ -134,8 +183,8 @@ header{
 
 }
 .how-it-works > div.container > div.details{
-  text-align: left;
-  max-width: 350px;
+  text-align: justify;
+  max-width: 250px;
 }
 .onde-estamos{
   text-align: left;
@@ -145,12 +194,15 @@ header{
 }
 .onde-estamos > div.container{
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-around;
   margin: 0 auto;
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
 }
 .onde-estamos > div.container div{
   width: 200px;
+  margin: 0 20px;
 
 }
 .onde-estamos > div.container div > p{
@@ -160,4 +212,50 @@ footer{
   height: 80px;
   width: 100%;
   background-color: aliceblue;
+}
+
+@media screen and (max-width: 370px){
+  .cars-list div > div.list{
+    justify-content: center;
+    text-align: left;
+  }  
+}
+@media screen and (max-width: 530px){
+  .cars-list div h4{
+    text-align: center;
+    
+  }
+  .cars-list div > div.list{
+    text-align: left;
+  }
+}
+@media screen and (max-width: 464px){
+  .intro > input.search-models-button{
+    border-radius: 5px;
+  }
+  
+  .intro > input.search-models{
+    border-radius: 5px ;
+  }  
+}
+@media screen and (max-width: 380px){
+  .intro > input.search-models{
+    width: 280px;
+  }  
+}
+@media screen and (max-width: 453px){
+  .header-right > div.btn-hamburguer{
+    display:block;
+  } 
+  .menu-list{
+    display: none;
+  }
+}
+@media screen and (min-width: 454px){
+  .mobile-menu{
+    display: none !important;
+  }
+}
+.show-mobile-menu{
+  display: block;
 }

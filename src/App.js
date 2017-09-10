@@ -25,22 +25,39 @@ class App extends Component {
       cars
     }
   }
+  componentDidMount(){
+    this.btnToggleMenu.addEventListener("click",() =>{
+      this.mobileMenu.classList.toggle("show-mobile-menu");
+    }, false)
+  }
   render() {
-    const carsView = this.state.cars.map(c => <CarViewModel price={c.price} name={c.name} location={c.location} year={c.year} votes={c.votes} /> );
+    const carsView = this.state.cars.map(c => <CarViewModel price={c.price} name={c.name} location={c.location} year={c.year} votes={c.votes} key={`${c.name}-${c.price}`}  /> );
     return (
       <div className="App">
         <header>
           <div className="header-left logo">
             <img src={InstacarroLogo} alt="instacarro logo" />
           </div>
+          
           <div className="header-right">
+          <div className="btn-hamburguer" ref={input => this.btnToggleMenu = input}>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>  
             <ul className="menu-list" >
               <li><a>Vender meu carro</a> </li>
               <li><a>Sou Lojista</a> </li>
-            </ul>
-            
+            </ul>      
           </div>
         </header>
+        <div id="mobile-menu" className="mobile-menu" ref={input => this.mobileMenu = input}>
+          <ul>
+                <li><a>Vender meu carro</a> </li>
+                <li><a>Sou Lojista</a> </li>
+              </ul>  
+              <hr/>
+        </div>
         <div className="intro">
           <div>
             <h1> Carro vendido.</h1>
