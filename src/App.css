@@ -1,0 +1,163 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+header{
+  display: flex;
+  background-color: #273c44;
+  justify-content: space-between;
+}
+.header-left{
+  
+}
+.header-right{
+}
+.menu-list{
+  list-style-type: none;
+  margin: 15 0 0 0;
+  padding: 0;
+  overflow: hidden;
+}
+.menu-list > li{
+  display: inline;
+}
+.menu-list > li > a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.intro{
+ background-color: #273c44;
+ text-align: center;
+ color: white; 
+ height: 250px;
+ padding-top: 100px;
+}
+
+.intro > input.search-models-button{
+  height: 36px;  
+  border-radius: 0 5px 5px 0;
+  border-color: transparent;
+  font-size:12px;
+  background-color: yellowgreen;
+  color:white;
+  font-weight: 600;
+}
+
+.intro > input.search-models{
+  border-radius: 5px 0 0 5px;
+  border-color: transparent;
+  
+  width: 350px;
+  height: 30px;
+  font-size:12px;
+}
+.brands{
+  height: 80px;
+  width: 100%;
+  background-color: aliceblue;
+}
+.cars-list{
+  width: 600px;
+  height: 100%;
+  margin: 0 auto;
+}
+.cars-list > .popular-cars{
+  text-align: left;
+}
+.cars-list > .popular-models{
+  text-align: left;
+}
+.car-info{
+  width: 170px;
+  font-size: 10px;
+}
+.car-info > img {
+  max-width: 170px;
+}
+.popular-cars > div.list{
+  display: flex;
+  justify-content: space-between;
+
+}
+.popular-models > div.list{
+  display: flex;
+  justify-content: space-between;
+  
+}
+.how-it-works{
+  margin-top: 50px;
+  padding-top:10px;
+  color: white;
+  background: #43B86A; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left,#004A46, #43B86A); /*Safari 5.1-6*/
+  background: -o-linear-gradient(right,#004A46, #43B86A); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(right,#004A46, #43B86A); /*Fx 3.6-15*/
+  background: linear-gradient(to right, #004A46, #43B86A); /*Standard*/
+
+}
+.how-it-works div.container > div.image > img{
+  width: 300px;  
+  }
+.how-it-works > div.container{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 800px;
+  
+}
+.how-it-works > h2.heading{
+  text-align: center;
+
+}
+.how-it-works > div.container > div.details{
+  text-align: left;
+  max-width: 350px;
+}
+.onde-estamos{
+  text-align: left;
+}
+.onde-estamos > h1{
+  text-align: center;
+}
+.onde-estamos > div.container{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 800px;
+}
+.onde-estamos > div.container div{
+  width: 200px;
+
+}
+.onde-estamos > div.container div > p{
+  font-size: 12px;
+}
+footer{
+  height: 80px;
+  width: 100%;
+  background-color: aliceblue;
+}
